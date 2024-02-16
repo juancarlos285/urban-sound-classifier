@@ -6,6 +6,10 @@ The motivation behind this project is to address the issue of noise pollution in
 ### Overview
 This project aims to classify urban sounds using machine learning techniques. The dataset utilized is the UrbanSounds8K from Kaggle, containing various urban sound recordings across different categories. The classification task involves identifying the following classes: air conditioner, car horn, children playing, dog bark, drilling, engine idling, gun shot, jackhammer, siren, and street music.
 
+**Source**
+
+- [UrbanSounds8k](https://www.kaggle.com/datasets/chrisfilo/urbansound8k)
+
 **Class balance:**
 
 <img src='images/sound_classes.png'>
