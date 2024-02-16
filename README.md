@@ -6,11 +6,19 @@ The motivation behind this project is to address the issue of noise pollution in
 ### Overview
 This project aims to classify urban sounds using machine learning techniques. The dataset utilized is the UrbanSounds8K from Kaggle, containing various urban sound recordings across different categories. The classification task involves identifying the following classes: air conditioner, car horn, children playing, dog bark, drilling, engine idling, gun shot, jackhammer, siren, and street music.
 
+**Class balance:**
+
+<img src='images/sound_classes.png'>
+
 ### Dataset and Testing Methodology
 The dataset comprises audio files obtained from urban environments, each labeled with one of the aforementioned classes. To ensure fair evaluation, a specific testing methodology is employed. The data is divided into 10 predetermined folds, and cross-validation is performed across these folds to obtain the mean accuracy. Reshuffling the data is avoided to prevent inflated scores that may not accurately reflect model performance.
 
 ### Features Extraction
-Features are extracted from the audio files, categorized into three domains: time, frequency, and time-frequency. These features include:
+Features are extracted from the spectrograms of the audio files. Usually mel-spectrograms (logarithmically-scaled) will be used. These features are categorized into three domains: time, frequency, and time-frequency:
+
+**Mel spectrogram**
+
+<img src='images/mel_spectrogram.png'>
 
 **Time Domain:**
 - Zero-crossing rate: The rate at which the audio waveform changes its sign. It provides insights into the noisiness of the signal.
@@ -48,6 +56,10 @@ Several machine learning models are tested for classification performance:
      - Learning rate: 0.3
      - Max tree depth: 6
      - Estimators: 500
+       
+       **Most important features of the XGBoost model**
+       
+       <img src='images/q3_xgboost_features.png'>
 
 ### Conclusion
 This project served as an excellent exercise in implementing multiple machine learning models to tackle audio classification. Moving forward, further steps may involve extracting additional features to enhance model performance and continuing to utilize XGBoost, or exploring recurrent neural networks (RNNs) which may be more suitable for capturing the temporal characteristics of sounds. Additionally, for CNNs, exploring alternative techniques to address varying audio lengths in spectrograms may yield improved results.
